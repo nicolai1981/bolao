@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.widget.Toast;
 
+<<<<<<< HEAD
+import com.facebook.login.LoginManager;
+=======
+>>>>>>> 11b940205fc7f0a6ca4da186e3ec643b75af07a1
 import com.facebook.login.LoginResult;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -15,6 +19,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import br.com.itocorp.android.meubolao.R;
+<<<<<<< HEAD
+import br.com.itocorp.android.meubolao.model.UserModel;
+=======
+>>>>>>> 11b940205fc7f0a6ca4da186e3ec643b75af07a1
 import br.com.itocorp.android.meubolao.view.LoginActivity;
 import br.com.itocorp.android.meubolao.view.MainActivity;
 
@@ -75,10 +83,27 @@ public class AppVM {
     }
 
     public void logout() {
+<<<<<<< HEAD
+        LoginManager.getInstance().logOut();
+=======
+>>>>>>> 11b940205fc7f0a6ca4da186e3ec643b75af07a1
         mAuth.signOut();
 
         Intent intent = new Intent(mContext, LoginActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
         mContext.startActivity(intent);
     }
+<<<<<<< HEAD
+
+    public UserModel.User getUser() {
+        UserModel.User user = new UserModel.User();
+        FirebaseUser fbUser = mAuth.getCurrentUser();
+        if (fbUser != null) {
+            user.setName(fbUser.getDisplayName());
+            user.setPhotoUrl(fbUser.getPhotoUrl().toString());
+        }
+        return user;
+    }
+=======
+>>>>>>> 11b940205fc7f0a6ca4da186e3ec643b75af07a1
 }
